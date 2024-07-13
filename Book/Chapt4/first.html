@@ -7,6 +7,7 @@
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <style>
+        
         #container{
             padding: 50px;
             background-color: #FFF
@@ -21,8 +22,18 @@
 
             class Letter extends React.Component{
                 render() {
+                    var letterStyle = {
+                        padding: 10,
+                        margin: 10,
+                        backgroundColor: this.props.bgcolor,
+                        color: "#333",
+                        display: "inline-block",
+                        fontFamily: "monospace",
+                        fontSize: 32,
+                        textAlign: "center"
+                    };
                     return (
-                        <div>
+                        <div style={letterStyle}>
                             {this.props.children}
                         </div>
                     );
@@ -30,11 +41,11 @@
             }
         ReactDOM.render(
             <div>
-                <Letter>A</Letter>
-                <Letter>Е</Letter>
-                <Letter>И</Letter>
-                <Letter>О</Letter>
-                <Letter>У</Letter>
+                <Letter bgcolor="#58B3FF">A</Letter>
+                <Letter bgcolor="#FF605F">Е</Letter>
+                <Letter bgcolor="#FFD52E">И</Letter>
+                <Letter bgcolor="#49DD8E">О</Letter>
+                <Letter bgcolor="#AE99FF">У</Letter>
             </div>,
             destination
         );
